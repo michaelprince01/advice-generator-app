@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: hsl(218, 23%, 16%);
+  font-family: 'Manrope', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.advice-card {
+  position: relative;
+  background: hsl(217, 19%, 24%);
+  width: 400px;
+  text-align: center;
+  border-radius: 8px;
+  padding: 2rem 2.5rem 4rem;
+}
+
+small {
+  display: block;
+  color: hsl(150, 100%, 66%);
+  letter-spacing: 6px;
+  font-size: 9px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.advice-text {
+  font-weight: 600;
+  color: hsl(193, 38%, 86%);
+}
+
+.advice-card::after {
+  content: '';
+  display: block;
+  margin: 2rem auto 0;
+  width: 100%;
+  height: 16px;
+  background: url(./images/pattern-divider-desktop.svg) no-repeat center;
+}
+
+.btn-generate {
+  background: hsl(150, 100%, 66%);
+  position: absolute;
+  left: 50%;
+  bottom: -1.5rem; /* half outside the card */
+  transform: translateX(-50%);
+  padding: 0.8rem;
+  border-radius: 50%;
+  display: flex;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+.btn-generate img {
+  width: 15px;
+}
+
+.btn-generate:active {
+  box-shadow: 0 0 25px hsl(150, 100%, 66%);
+  transform: translateX(-50%) scale(0.95);
+}
+
+/* reponsivenss */
+
+@media (max-width: 400px) {
+  body {
+    padding: 1rem;
+  }
+
+  .advice-text {
+    font-size: 1.2rem;
+  }
+
+  .advice-card::after {
+    background: url(./images/pattern-divider-mobile.svg) no-repeat center;
+  }
+
+  .btn-generate {
+    bottom: -1.8rem; /* half outside the card */
+    padding: 1.3rem;
+  }
+  .btn-generate img {
+    width: 20px;
+  }
+}
